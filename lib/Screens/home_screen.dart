@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 import 'package:get/get.dart';
+import 'package:plant_app/Animation_Constant/bell_animation.dart';
 import 'package:plant_app/Constant/textField_widget.dart';
 import 'package:plant_app/Constant/text_widget_constant.dart';
 import 'package:plant_app/Constant/themeData_constant.dart';
@@ -9,8 +10,7 @@ import 'package:plant_app/Constant/widget_constant.dart';
 import 'package:plant_app/Controllers/home_controller.dart';
 
 class HomeScreen extends StatelessWidget {
-   HomeScreen({Key? key}) : super(key: key);
-
+  HomeScreen({Key? key}) : super(key: key);
 
   HomeController controller = Get.put(HomeController());
   @override
@@ -50,7 +50,7 @@ class HomeScreen extends StatelessWidget {
                       shape: BoxShape.circle,
                       boxShadow: [BoxShadow(color: shadowColor, spreadRadius: 0, blurRadius: 10, offset: Offset(5, 5))],
                     ),
-                    child: SvgPicture.asset(bellIcon),
+                    child: BellAnimation(child: SvgPicture.asset(bellIcon)),
                   ),
                   widthBox(15),
                   Container(
@@ -75,7 +75,7 @@ class HomeScreen extends StatelessWidget {
                     fontSize: 22,
                   )),
               heightBox(5),
-               Align(
+              Align(
                   alignment: Alignment.centerLeft,
                   child: textWidgetConst(
                     title: "Bring the perfect plant at your peace.",
@@ -88,9 +88,10 @@ class HomeScreen extends StatelessWidget {
                 hintText: "Search",
                 fillColor: whiteColor,
                 suffixIcon: Padding(
-                  padding: EdgeInsets.symmetric(horizontal: 15.w,
-                    vertical: 10.h,),
-
+                  padding: EdgeInsets.symmetric(
+                    horizontal: 15.w,
+                    vertical: 10.h,
+                  ),
                   child: SvgPicture.asset(
                     bellIcon,
                     height: 20.h,
@@ -99,8 +100,10 @@ class HomeScreen extends StatelessWidget {
                   ),
                 ),
                 prefixIcon: Padding(
-                  padding: EdgeInsets.symmetric(horizontal: 15.w,
-                    vertical: 10.h,),
+                  padding: EdgeInsets.symmetric(
+                    horizontal: 15.w,
+                    vertical: 10.h,
+                  ),
                   child: SvgPicture.asset(
                     settingIcon,
                     height: 20.h,
@@ -109,7 +112,6 @@ class HomeScreen extends StatelessWidget {
                   ),
                 ),
               ),
-
             ],
           ),
         ),
